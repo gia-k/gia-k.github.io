@@ -12,12 +12,59 @@
         <style>
 
             .page-header {
-                line-height: 1.6;
-                border-bottom: 1px solid #e5e5e5;
+                text-align: center;
             }
 
             img {
-                width: 30%;
+                width: 8%;
+                display: inline-block;
+                margin: 0 auto;
+            }
+
+            @font-face {
+                font-family: pixelFont;
+                src: url(slkscr.ttf);
+            }
+
+            .nav-scroller {
+                position: relative;
+                z-index: 2;
+                height: 2.75rem;
+                overflow-y: hidden;
+                border-top: 1px dotted black;
+                border-bottom: 1px dotted black;
+            }
+
+            .nav-scroller .nav {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-wrap: nowrap;
+                flex-wrap: nowrap;
+                padding-bottom: 1rem;
+                margin-top: -1px;
+                overflow-x: auto;
+                text-align: center;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .nav-scroller .nav-link {
+                padding-top: .75rem;
+                padding-bottom: .75rem;
+                font-size: .875rem;
+            }
+
+            .pixel {
+                font-family: pixelFont;
+                font-size: 18px;
+                color: black;
+                text-shadow: 2px 2px rgb(169, 80, 253);
+            }
+
+            .pixel:hover {
+                color: black;
+                text-shadow: 2px 2px rgb(44, 255, 179);
             }
 
         </style>
@@ -26,13 +73,23 @@
 
     <body>
         <div class=container>
-            <header class="page-header py-3">             
-                <div class="row flex-nowrap justify-content-between align-items-center">
-                    <div class="col-12">
+            <header class="page-header py-5">             
+                <div class="row">
+                    <div class="col-12 align-items-center">
                         <img src="gia-logo.png">
                     </div>
                 </div>
             </header>
+
+            <!-- bg-dark class for dark navbar -->
+            <div class="nav-scroller py-1 px-5">
+                <nav class="nav d-flex justify-content-between">
+                  <a class="p-2 pixel" href="#">me</a>
+                  <a class="p-2 pixel" href="#">art</a>
+                  <a class="p-2 pixel" href="#">design</a>
+                  <a class="p-2 pixel" href="#">fun</a>
+                </nav>
+              </div>
         </div>
 
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
